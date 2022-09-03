@@ -1,0 +1,9 @@
+// Importing the abstracts folder
+@use '../abstracts/variables' as *;
+
+// Defining z-indexes
+@each $z-name , $z-index in $zindex{
+    .#{$prefix}z-#{$z-name}{
+        z-index: $z-index;
+    }
+}

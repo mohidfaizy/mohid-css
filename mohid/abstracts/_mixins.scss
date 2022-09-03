@@ -1,0 +1,10 @@
+// Importing the abstracts folder
+@use '../abstracts/variables' as *;
+
+// This is a standard container properties mixins
+@mixin create-container($padding-x: $container-defalut-padding-x){
+    padding-left: $padding-x;
+    padding-right: $padding-x;
+    margin-left: auto;
+    margin-right: auto;
+}

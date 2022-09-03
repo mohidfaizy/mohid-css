@@ -1,0 +1,56 @@
+// Importing the abstracts folder
+@use '../abstracts/index' as *;
+
+// Creating Container
+.#{$prefix}container {
+    max-width: $container-width;
+    @include create-container();
+}
+
+// Container Sub Classes
+@each $key, $value in $grid-breakpoints {
+    .#{$prefix}container\:#{$key} {
+        max-width: $container-width;
+        @include create-container();
+        @media screen and (max-width: #{$value}) {
+            max-width: 100%;
+        }
+    }
+}
+
+// Make container responsive
+@media screen and (max-width: 1400px) {
+    .#{$prefix}container,
+    .#{$prefix}container\:sm,
+    .#{$prefix}container\:md,
+    .#{$prefix}container\:lg,
+    .#{$prefix}container\:xl {
+        max-width: 1100px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .#{$prefix}container,
+    .#{$prefix}container\:sm,
+    .#{$prefix}container\:md,
+    .#{$prefix}container\:lg {
+        max-width: 960px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .#{$prefix}container,
+    .#{$prefix}container\:sm,
+    .#{$prefix}container\:md {
+        max-width: 720px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .#{$prefix}container\:sm {
+        max-width: 540px;
+    }
+    .#{$prefix}container {
+        max-width: 100%;
+    }
+}

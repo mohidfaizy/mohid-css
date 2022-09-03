@@ -1,0 +1,72 @@
+//////////////////////////
+///// Variable Setup /////
+//////////////////////////
+
+// Add Prefix //
+$prefix: "";
+
+// Color Setup //
+$colors: (
+);
+
+// Font Family // 
+$font-family : "Poppins", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+// Paddings //
+$container-defalut-padding-x: 12px;
+
+// Components Widths //
+$container-width: 1300px;
+
+// Breakpoints Setup //
+$grid-breakpoints: (
+    sm:     576px,
+    md:     768px,
+    lg:     1000px,
+    xl:     1200px,
+    xxl:    1400px
+);
+
+// Indexes Setup //
+$zindex: (
+    dropdown:   1000,
+    sticky:     1020,
+    fixed:      1040,
+    offcanvas:  1050,
+    modal:      1060,
+    popover:    1080,
+    tooltip:    1100,
+    toast:      1120,
+);
+
+// Columns //
+$col-details:(
+    1: 8.33333333%,
+    2: 16.66666666%,
+    3: 25%,
+    4: 33.33333333%,
+    5: 41.66666666%,
+    6: 50%,
+    7: 58.33333333%,
+    8: 66.66666666%,
+    9: 75%,
+    10: 83.33333333%,
+    11: 91.66666666%,
+    12: 100%
+);
+
+// Offsets //
+$offset:(
+    1: 8.33333333%,
+    2: 16.66666666%,
+    3: 25%,
+    4: 33.33333333%,
+    5: 41.66666666%,
+    6: 50%,
+    7: 58.33333333%,
+    8: 66.66666666%,
+    9: 75%,
+    10: 83.33333333%,
+    11: 91.66666666%,
+    12: 100%
+)
