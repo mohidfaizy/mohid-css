@@ -5,8 +5,10 @@
 // Add Prefix //
 $prefix: "";
 
-// Color Setup //
+// Colors System
+$blue:      #fff !default;
 $colors: (
+
 );
 
 // Font Family // 
@@ -18,7 +20,7 @@ $container-defalut-padding-x: 12px;
 // Components Widths //
 $container-width: 1300px;
 
-// Breakpoints Setup //
+// Breakpoints map //
 $grid-breakpoints: (
     sm:     576px,
     md:     768px,
@@ -27,7 +29,7 @@ $grid-breakpoints: (
     xxl:    1400px
 );
 
-// Indexes Setup //
+// Indexes map //
 $zindex: (
     dropdown:   1000,
     sticky:     1020,
@@ -39,7 +41,7 @@ $zindex: (
     toast:      1120,
 );
 
-// Columns //
+// Columns map //
 $col-details:(
     1: 8.33333333%,
     2: 16.66666666%,
@@ -55,7 +57,7 @@ $col-details:(
     12: 100%
 );
 
-// Offsets //
+// Offsets map//
 $offset:(
     1: 8.33333333%,
     2: 16.66666666%,
