@@ -10,7 +10,7 @@ const jitAllowedProps = {
   "color": "color",
   "background": "bg",
   "background-color": "bg-clr",
-  "background-image": "bg-img",
+  "background": "bg-img",
   'font-size': "font-size",
   "font-weight": "font-weight",
 };
@@ -29,7 +29,7 @@ for (let jitIndex = 0; jitIndex <= jitEveryElement.length; jitIndex++) {
             const jitAllowedPropsPattern = new RegExp(jitAllowedClassValue, "g");
             if(jitTriggered.match(jitAllowedPropsPattern)){
                 // Getting the value of particular JIT property value
-                let jitTriggeredElementClassValue = jitTriggered.match(/(\[)[# \w]+/g);
+                let jitTriggeredElementClassValue = jitTriggered.match(/(\[)[# \w . ( )]+/g);
                 jitTriggeredElementClassValue = jitTriggeredElementClassValue[0].substr( 1, jitTriggeredElementClassValue[0].length);
 
                 console.log(jitAllowedClassKey,jitTriggeredElementClassValue);
