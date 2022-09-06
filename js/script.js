@@ -34,13 +34,11 @@ for (let jitIndex = 0; jitIndex <= jitEveryElement.length; jitIndex++) {
             Object.entries(jitAllowedProps).forEach((jitAllowedClass) => {
                 const [jitAllowedClassKey, jitAllowedClassValue] = jitAllowedClass,
                 jitAllowedClassPattern = new RegExp(jitAllowedClassValue + "-(\\[)([# \\w . ( )]+)(\\])", "g");
-                console.log(jitAllowedClassPattern); // Checking if any element has jit class
+                // Checking if any element has jit class
                 if(jitTriggered.match(jitAllowedClassPattern)){
                     // Getting the value of particular JIT property value
                     let jitTriggeredElementClassValue = jitTriggered.match(/(\[)[# \w . ( )]+/g);
                     jitTriggeredElementClassValue = jitTriggeredElementClassValue[0].substr( 1, jitTriggeredElementClassValue[0].length);
-
-                    console.log(jitAllowedClassKey,jitTriggeredElementClassValue);
 
                     jitTriggeredElement.style.setProperty(jitAllowedClassKey, jitTriggeredElementClassValue);
                 }
