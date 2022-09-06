@@ -1,3 +1,6 @@
+// Prefix for all classes
+const mohidPrefix = "";
+
 /////////////////////////////
 ////// JIT Compilation //////
 /////////////////////////////
@@ -6,17 +9,20 @@
 const jitEveryElement = document.body.getElementsByTagName("*");
 
 // Object to particular jit classes
-const jitAllowedProps = {
-  "color": "color",
-  "background": "bg",
-  "background-color": "bg-clr",
-  "background": "bg-img",
-  'font-size': "font-size",
-  "font-weight": "font-weight",
+let jitAllowedProps = {
+  "color": mohidPrefix + "color",
+  "background": mohidPrefix + "bg",
+  "background-color": mohidPrefix + "bg-clr",
+  "background": mohidPrefix + "bg-img",
+  "font-size": mohidPrefix + "font-size",
+  "font-weight": mohidPrefix + "font-weight",
+  "width": mohidPrefix + "width",
+  "height": mohidPrefix + "height",
+  "maxWidth": mohidPrefix + "max-width",
+  "maxHeight": mohidPrefix + "max-height",
+  "minWidth": mohidPrefix + "min-width",
+  "minHeight": mohidPrefix + "min-height"
 };
-
-// Function to check jit element
-const jitCheck = () => {};
 
 // Loop to check every element
 for (let jitIndex = 0; jitIndex <= jitEveryElement.length; jitIndex++) {
