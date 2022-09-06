@@ -13,7 +13,7 @@ let jitAllowedProps = {
   "color": mohidPrefix + "color",
   "background": mohidPrefix + "bg",
   "background-color": mohidPrefix + "bg-clr",
-  "background": mohidPrefix + "bg-img",
+  "background-image": mohidPrefix + "bg-img",
   "font-size": mohidPrefix + "font-size",
   "font-weight": mohidPrefix + "font-weight",
   "width": mohidPrefix + "width",
@@ -27,21 +27,24 @@ let jitAllowedProps = {
 // Loop to check every element
 for (let jitIndex = 0; jitIndex <= jitEveryElement.length; jitIndex++) {
     jitTriggeredElement = jitEveryElement[jitIndex];
-    jitTriggeredElementClasses = jitTriggeredElement.classList;
-    jitTriggeredElementClasses.forEach((jitTriggered) => {
-        // Checking if any JIT class exists
-        Object.entries(jitAllowedProps).forEach((jitAllowedClass) => {
-            const [jitAllowedClassKey, jitAllowedClassValue] = jitAllowedClass;
-            const jitAllowedPropsPattern = new RegExp(jitAllowedClassValue, "g");
-            if(jitTriggered.match(jitAllowedPropsPattern)){
-                // Getting the value of particular JIT property value
-                let jitTriggeredElementClassValue = jitTriggered.match(/(\[)[# \w . ( )]+/g);
-                jitTriggeredElementClassValue = jitTriggeredElementClassValue[0].substr( 1, jitTriggeredElementClassValue[0].length);
+    if(jitTriggeredElement != null && jitTriggeredElement != undefined){
+        jitTriggeredElementClasses = jitTriggeredElement.classList;
+        jitTriggeredElementClasses.forEach((jitTriggered) => {
+            // Checking if any JIT class exists
+            Object.entries(jitAllowedProps).forEach((jitAllowedClass) => {
+                const [jitAllowedClassKey, jitAllowedClassValue] = jitAllowedClass,
+                jitAllowedClassPattern = new RegExp(jitAllowedClassValue + "-(\\[)([# \\w . ( )]+)(\\])", "g");
+                console.log(jitAllowedClassPattern); // Checking if any element has jit class
+                if(jitTriggered.match(jitAllowedClassPattern)){
+                    // Getting the value of particular JIT property value
+                    let jitTriggeredElementClassValue = jitTriggered.match(/(\[)[# \w . ( )]+/g);
+                    jitTriggeredElementClassValue = jitTriggeredElementClassValue[0].substr( 1, jitTriggeredElementClassValue[0].length);
 
-                console.log(jitAllowedClassKey,jitTriggeredElementClassValue);
+                    console.log(jitAllowedClassKey,jitTriggeredElementClassValue);
 
-                jitTriggeredElement.style.setProperty(jitAllowedClassKey, jitTriggeredElementClassValue);
-            }
+                    jitTriggeredElement.style.setProperty(jitAllowedClassKey, jitTriggeredElementClassValue);
+                }
+            });
         });
-    });
+    }
 }
