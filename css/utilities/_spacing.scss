@@ -1,65 +1,195 @@
 // Importing the abstracts folder
 @use '../abstracts/index' as *;
 
-@each $spacing-name , $spacing-value in $spacing{
+@each $spacing-name ,
+$spacing-value in $spacing {
+
     // Margins
-    .#{$prefix}m-#{$spacing-name}{
+    .#{$prefix}m-#{$spacing-name} {
         margin: $spacing-value;
     }
-    .#{$prefix}ml-#{$spacing-name}{
+
+    .#{$prefix}ml-#{$spacing-name} {
         margin-left: $spacing-value;
     }
-    .#{$prefix}mr-#{$spacing-name}{
+
+    .#{$prefix}mr-#{$spacing-name} {
         margin-right: $spacing-value;
     }
-    .#{$prefix}mt-#{$spacing-name}{
+
+    .#{$prefix}mt-#{$spacing-name} {
         margin-top: $spacing-value;
     }
-    .#{$prefix}mb-#{$spacing-name}{
+
+    .#{$prefix}mb-#{$spacing-name} {
         margin-bottom: $spacing-value;
     }
-    .#{$prefix}mx-#{$spacing-name}{
+
+    .#{$prefix}mx-#{$spacing-name} {
         margin-left: $spacing-value;
         margin-right: $spacing-value;
     }
-    .#{$prefix}my-#{$spacing-name}{
+
+    .#{$prefix}my-#{$spacing-name} {
         margin-top: $spacing-value;
         margin-bottom: $spacing-value;
     }
 
     // Paddings
-    .#{$prefix}p-#{$spacing-name}{
+    .#{$prefix}p-#{$spacing-name} {
         padding: $spacing-value;
     }
-    .#{$prefix}pl-#{$spacing-name}{
+
+    .#{$prefix}pl-#{$spacing-name} {
         padding-left: $spacing-value;
     }
-    .#{$prefix}pr-#{$spacing-name}{
+
+    .#{$prefix}pr-#{$spacing-name} {
         padding-right: $spacing-value;
     }
-    .#{$prefix}pt-#{$spacing-name}{
+
+    .#{$prefix}pt-#{$spacing-name} {
         padding-top: $spacing-value;
     }
-    .#{$prefix}pb-#{$spacing-name}{
+
+    .#{$prefix}pb-#{$spacing-name} {
         padding-bottom: $spacing-value;
     }
-    .#{$prefix}px-#{$spacing-name}{
+
+    .#{$prefix}px-#{$spacing-name} {
         padding-left: $spacing-value;
         padding-right: $spacing-value;
     }
-    .#{$prefix}py-#{$spacing-name}{
+
+    .#{$prefix}py-#{$spacing-name} {
         padding-top: $spacing-value;
         padding-bottom: $spacing-value;
     }
 
     // Gaps
-    .#{$prefix}gap-#{$spacing-name}{
+    .#{$prefix}gap-#{$spacing-name} {
         gap: $spacing-value;
     }
-    .#{$prefix}col-gap-#{$spacing-name}{
+
+    .#{$prefix}col-gap-#{$spacing-name} {
         column-gap: $spacing-value;
     }
-    .#{$prefix}row-gap-#{$spacing-name}{
+
+    .#{$prefix}row-gap-#{$spacing-name} {
         row-gap: $spacing-value;
+    }
+
+    // Responsiveness is the power
+    @each $breakpoint-name,
+    $breakpoint-value in $grid-breakpoints {
+        // Margins
+        .#{$prefix}m-#{$spacing-name}\:#{$breakpoint-name} {
+            @media screen and (min-width: $breakpoint-value){
+                margin: $spacing-value;
+            }
+        }
+
+        .#{$prefix}ml-#{$spacing-name}\:#{$breakpoint-name} {
+            @media screen and (max-width: $breakpoint-value){
+                margin-left: $spacing-value;
+            }
+        }
+
+        .#{$prefix}mr-#{$spacing-name}\:#{$breakpoint-name} {
+            @media screen and (max-width: $breakpoint-value){
+                margin-right: $spacing-value;
+            }
+        }
+
+        .#{$prefix}mt-#{$spacing-name}\:#{$breakpoint-name} {
+            @media screen and (max-width: $breakpoint-value){
+                margin-top: $spacing-value;
+            }
+        }
+
+        .#{$prefix}mb-#{$spacing-name}\:#{$breakpoint-name} {
+            @media screen and (max-width: $breakpoint-value){
+                margin-bottom: $spacing-value;
+            }
+        }
+
+        .#{$prefix}mx-#{$spacing-name}\:#{$breakpoint-name} {
+            @media screen and (max-width: $breakpoint-value){
+                margin-left: $spacing-value;
+                margin-right: $spacing-value;
+            }
+        }
+
+        .#{$prefix}my-#{$spacing-name}\:#{$breakpoint-name} {
+            @media screen and (max-width: $breakpoint-value){
+                margin-top: $spacing-value;
+                margin-bottom: $spacing-value;
+            }
+        }
+
+        // Paddings
+        .#{$prefix}p-#{$spacing-name}\:#{$breakpoint-name} {
+            @media screen and (max-width: $breakpoint-value){
+                padding: $spacing-value;
+            }
+        }
+
+        .#{$prefix}pl-#{$spacing-name} {
+            @media screen and (max-width: $breakpoint-value){
+                padding-left: $spacing-value;
+            }
+        }
+
+        .#{$prefix}pr-#{$spacing-name} {
+            @media screen and (max-width: $breakpoint-value){
+                padding-right: $spacing-value;
+            }
+        }
+
+        .#{$prefix}pt-#{$spacing-name} {
+            @media screen and (max-width: $breakpoint-value){
+                padding-top: $spacing-value;
+            }
+        }
+
+        .#{$prefix}pb-#{$spacing-name} {
+            @media screen and (max-width: $breakpoint-value){
+                padding-bottom: $spacing-value;
+            }
+        }
+
+        .#{$prefix}px-#{$spacing-name} {
+            @media screen and (max-width: $breakpoint-value){
+                padding-right: $spacing-value;
+                padding-left: $spacing-value;
+            }
+        }
+
+        .#{$prefix}py-#{$spacing-name} {
+            @media screen and (max-width: $breakpoint-value){
+                padding-top: $spacing-value;
+                padding-bottom: $spacing-value;
+            }
+        }
+
+        // Gaps
+        .#{$prefix}gap-#{$spacing-name} {
+            @media screen and (max-width: $breakpoint-value){
+                gap: $spacing-value;
+            }
+        }
+
+        .#{$prefix}col-gap-#{$spacing-name} {
+            @media screen and (max-width: $breakpoint-value){
+                column-gap: $spacing-value;
+            }
+        }
+
+        .#{$prefix}row-gap-#{$spacing-name} {
+            @media screen and (max-width: $breakpoint-value){
+                row-gap: $spacing-value;
+            }
+        }
+
     }
 }
