@@ -2,48 +2,53 @@
 @use '../abstracts/index' as *;
 
 // Setting Column
-.#{$prefix}row{
+.#{$prefix}row {
     display: flex;
     flex-wrap: wrap;
-    *{
+
+    * {
         flex-shrink: 0;
         width: 100%;
     }
-    .#{$prefix}col{
+
+    .#{$prefix}col {
         flex: 1 0 0;
     }
-    @each $col-name , $col-value in $col-details{
-        .#{$prefix}col-#{$col-name}{
+
+    @each $col-name ,
+    $col-value in $col-details {
+        .#{$prefix}col-#{$col-name} {
             width: $col-value;
             flex: 0 0 auto;
         }
     }
-    // To create responsive columns in different breakpoints
-    @each $breakpoint-name , $breakpoint-value in $grid-breakpoints{
-        @each $col-name , $col-value in $col-details{
-            .#{$prefix}col-#{$col-name}\:#{$breakpoint-name}{
-                width: $col-value;
-                flex: 0 0 auto;
-                @media screen and (max-width: $breakpoint-value) {
-                    width: 100%;
+
+    // Loop $grid-breakpoints to create responsive columns in different breakpoints
+    @each $breakpoint-name, $breakpoint-value in $grid-breakpoints {
+        @media screen and (min-width: $breakpoint-value) {
+            @each $col-name, $col-value in $col-details {
+                .#{$prefix}col-#{$col-name}\:#{$breakpoint-name} {
+                    width: $col-value;
+                    flex: 0 0 auto;
                 }
             }
         }
     }
-}
 
-// Offsets to margin left
-@each $offset-name, $offset-value in $offset{
-    .#{$prefix}offset-#{$offset-name}{
-        margin-left: $offset-value;
+    // Offsets to margin left
+    @each $offset-name, $offset-value in $col-details {
+        .#{$prefix}offset-#{$offset-name} {
+            margin-left: $offset-value;
+        }
     }
+
     // To create responsive offsets
-    @each $breakpoint-name , $breakpoint-value in $grid-breakpoints{
-        @each $offset-name, $offset-value in $offset{
-            .#{$prefix}offset-#{$offset-name}\:#{$breakpoint-name}{
-                margin-left: $offset-value;
-                @media screen and (max-width: $breakpoint-value) {
-                    margin-left: 0;
+    @each $breakpoint-name, $breakpoint-value in $grid-breakpoints {
+        @media screen and (min-width: $breakpoint-value) {
+            @each $offset-name,
+            $offset-value in $col-details {
+                .#{$prefix}offset-#{$offset-name}\:#{$breakpoint-name} {
+                    margin-left: $offset-value;
                 }
             }
         }

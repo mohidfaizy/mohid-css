@@ -82,114 +82,78 @@ $spacing-value in $spacing {
     // Responsiveness is the power
     @each $breakpoint-name,
     $breakpoint-value in $grid-breakpoints {
-        // Margins
-        .#{$prefix}m-#{$spacing-name}\:#{$breakpoint-name} {
-            @media screen and (min-width: $breakpoint-value){
+        @media screen and (min-width: $breakpoint-value) {
+            .#{$prefix}m-#{$spacing-name}\:#{$breakpoint-name} {
                 margin: $spacing-value;
             }
-        }
-
-        .#{$prefix}ml-#{$spacing-name}\:#{$breakpoint-name} {
-            @media screen and (max-width: $breakpoint-value){
+            .#{$prefix}ml-#{$spacing-name}\:#{$breakpoint-name} {
                 margin-left: $spacing-value;
             }
-        }
-
-        .#{$prefix}mr-#{$spacing-name}\:#{$breakpoint-name} {
-            @media screen and (max-width: $breakpoint-value){
+            .#{$prefix}mr-#{$spacing-name}\:#{$breakpoint-name} {
                 margin-right: $spacing-value;
             }
-        }
 
-        .#{$prefix}mt-#{$spacing-name}\:#{$breakpoint-name} {
-            @media screen and (max-width: $breakpoint-value){
+            .#{$prefix}mt-#{$spacing-name}\:#{$breakpoint-name} {
                 margin-top: $spacing-value;
             }
-        }
 
-        .#{$prefix}mb-#{$spacing-name}\:#{$breakpoint-name} {
-            @media screen and (max-width: $breakpoint-value){
+            .#{$prefix}mb-#{$spacing-name}\:#{$breakpoint-name} {
                 margin-bottom: $spacing-value;
             }
-        }
 
-        .#{$prefix}mx-#{$spacing-name}\:#{$breakpoint-name} {
-            @media screen and (max-width: $breakpoint-value){
+            .#{$prefix}mx-#{$spacing-name}\:#{$breakpoint-name} {
                 margin-left: $spacing-value;
                 margin-right: $spacing-value;
             }
-        }
 
-        .#{$prefix}my-#{$spacing-name}\:#{$breakpoint-name} {
-            @media screen and (max-width: $breakpoint-value){
+            .#{$prefix}my-#{$spacing-name}\:#{$breakpoint-name} {
                 margin-top: $spacing-value;
                 margin-bottom: $spacing-value;
             }
-        }
 
-        // Paddings
-        .#{$prefix}p-#{$spacing-name}\:#{$breakpoint-name} {
-            @media screen and (max-width: $breakpoint-value){
+            // Paddings
+            .#{$prefix}p-#{$spacing-name}\:#{$breakpoint-name} {
                 padding: $spacing-value;
             }
-        }
 
-        .#{$prefix}pl-#{$spacing-name} {
-            @media screen and (max-width: $breakpoint-value){
+            .#{$prefix}pl-#{$spacing-name} {
                 padding-left: $spacing-value;
             }
-        }
 
-        .#{$prefix}pr-#{$spacing-name} {
-            @media screen and (max-width: $breakpoint-value){
+            .#{$prefix}pr-#{$spacing-name} {
                 padding-right: $spacing-value;
             }
-        }
 
-        .#{$prefix}pt-#{$spacing-name} {
-            @media screen and (max-width: $breakpoint-value){
+            .#{$prefix}pt-#{$spacing-name} {
                 padding-top: $spacing-value;
             }
-        }
 
-        .#{$prefix}pb-#{$spacing-name} {
-            @media screen and (max-width: $breakpoint-value){
+            .#{$prefix}pb-#{$spacing-name} {
                 padding-bottom: $spacing-value;
             }
-        }
 
-        .#{$prefix}px-#{$spacing-name} {
-            @media screen and (max-width: $breakpoint-value){
-                padding-right: $spacing-value;
+            .#{$prefix}px-#{$spacing-name} {
                 padding-left: $spacing-value;
+                padding-right: $spacing-value;
             }
-        }
 
-        .#{$prefix}py-#{$spacing-name} {
-            @media screen and (max-width: $breakpoint-value){
+            .#{$prefix}py-#{$spacing-name} {
                 padding-top: $spacing-value;
                 padding-bottom: $spacing-value;
             }
-        }
 
-        // Gaps
-        .#{$prefix}gap-#{$spacing-name} {
-            @media screen and (max-width: $breakpoint-value){
+            // Gaps
+            .#{$prefix}gap-#{$spacing-name} {
                 gap: $spacing-value;
             }
-        }
 
-        .#{$prefix}col-gap-#{$spacing-name} {
-            @media screen and (max-width: $breakpoint-value){
+            .#{$prefix}col-gap-#{$spacing-name} {
                 column-gap: $spacing-value;
             }
-        }
 
-        .#{$prefix}row-gap-#{$spacing-name} {
-            @media screen and (max-width: $breakpoint-value){
+            .#{$prefix}row-gap-#{$spacing-name} {
                 row-gap: $spacing-value;
             }
         }
-
     }
 }
